@@ -1,4 +1,5 @@
 classdef edit_ax < handle
+    % Code to edit an axis follow my style
     properties
         xlim=[];
         ylim=[];
@@ -24,11 +25,11 @@ classdef edit_ax < handle
             set(gca,'YLim',[min(min(self.ydata)) max(max(self.ydata))])
             set(gca,'ZLim',[min(min(self.zdata)) max(max(self.zdata))])          
         end
-        function export_pic(s,dirsave,exten)
+        function export_pic(~,dirsave,name,exten)
                         %apply style sheet info
             snam='mystyle'; % The name of your style file (NO extension)
             s=hgexport('readstyle',snam);
-            fnam=fullfile(dirsave,"myfig."+exten); % your file name
+            fnam=fullfile(dirsave,name+"."+exten); % your file name
             s.Format = exten; %I needed this to make it work but maybe you wont.
             set(gcf,'Color','none');
             hgexport(gcf,fnam,s);
