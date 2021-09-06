@@ -58,4 +58,4 @@ opts=trainingOptions('sgdm','InitialLearnRate',1e-4,...
 
 net=trainNetwork(imgs,label,lgraph,opts);
 % end
-% save('NetDetect.mat','net')
+save('NetCI.mat','net')

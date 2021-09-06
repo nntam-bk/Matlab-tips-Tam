@@ -1,9 +1,9 @@
-x = 1:10;
-y = repmat(x',100,1);
+x = 0:10;
+y = repmat(x',50,1);
 yp = y;
 yt = categorical(y); % true 
 ran_num = randperm(length(y));
-for i = 1:30
+for i = 1:15
 step = randi([-3,3],1);
 if abs(yp(ran_num(i))-yp(ran_num(i)+step))>3
 yp(ran_num(i)) = yp(ran_num(i));
